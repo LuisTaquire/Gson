@@ -47,7 +47,7 @@ public class PersonaC implements Serializable {
 
     public void buscarDNI() {
         try {
-            System.out.println("tengo miedo");
+            System.out.println("buscar");
             dao.buscardni(persona);
 
         } catch (Exception e) {
