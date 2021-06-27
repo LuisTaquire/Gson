@@ -1,0 +1,52 @@
+create database dbgson
+go
+use dbgson
+go
+
+
+-- tables
+-- Table: PERSONA
+CREATE TABLE PERSONA (
+    IDPER int  NOT NULL IDENTITY(1, 1),
+    NOMPER varchar(50)  NOT NULL,
+    APEPATPER varchar(50)  NOT NULL,
+    APEMATPER varchar(50)  NOT NULL,
+    DNIPER char(9)  NOT NULL,
+    SEXPER char(1)  NOT NULL,
+    CODUBI varchar(6)  NOT NULL,
+    CONSTRAINT PERSONA_pk PRIMARY KEY  (IDPER)
+);
+
+-- Table: UBIGEO
+CREATE TABLE UBIGEO (
+    CODUBI varchar(6)  NOT NULL,
+    DPTUBI varchar(13)  NOT NULL,
+    PROUBI varchar(25)  NOT NULL,
+    DISUBI varchar(36)  NOT NULL,
+    CONSTRAINT UBIGEO_pk PRIMARY KEY  (CODUBI)
+);
+
+-- foreign keys
+-- Reference: PERSONA_UBIGEO (table: PERSONA)
+ALTER TABLE PERSONA ADD CONSTRAINT PERSONA_UBIGEO
+    FOREIGN KEY (CODUBI)
+    REFERENCES UBIGEO (CODUBI);
+
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150501', N'Lima', N'Cañete', N'San Vicente de Cañete')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150502', N'Lima', N'Cañete', N'Asia')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150503', N'Lima', N'Cañete', N'Calango')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150504', N'Lima', N'Cañete', N'Cerro Azul')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150505', N'Lima', N'Cañete', N'Chilca')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150506', N'Lima', N'Cañete', N'Coayllo')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150507', N'Lima', N'Cañete', N'Imperial')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150508', N'Lima', N'Cañete', N'Lunahuana')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150509', N'Lima', N'Cañete', N'Mala')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150510', N'Lima', N'Cañete', N'Nuevo Imperial')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150511', N'Lima', N'Cañete', N'Pacaran')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150512', N'Lima', N'Cañete', N'Quilmana')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150513', N'Lima', N'Cañete', N'San Antonio')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150514', N'Lima', N'Cañete', N'San Luis')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150515', N'Lima', N'Cañete', N'Santa Cruz de Flores')
+INSERT INTO [dbo].[UBIGEO] ([CODUBI], [DPTUBI], [PROUBI], [DISUBI]) VALUES (N'150516', N'Lima', N'Cañete', N'Zuñiga')
+
+INSERT INTO [dbo].[PERSONA] ([NOMPER], [APEPATPER], [APEMATPER], [DNIPER], [SEXPER], [CODUBI]) VALUES (N'GIANCARLO', N'VALENCIA', N'SOTOMAYOR', N'41298813 ', N'M', N'150501')
